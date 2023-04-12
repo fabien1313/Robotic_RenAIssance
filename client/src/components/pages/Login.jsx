@@ -51,6 +51,7 @@ const styles = {
   reroute: {
     display: 'flex',
     fontFamily: 'sans-serif',
+    fontSize: '12px',
     justifyContent: 'center',
     marginTop: '2rem',
     color: 'whitesmoke',

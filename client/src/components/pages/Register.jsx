@@ -1,10 +1,68 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../../utils/mutations";
 
 import Auth from "../../utils/auth";
+
+const styles = {
+	formBody: {
+	  margin: '0 auto',
+	  // border: "2px solid red",
+	  display: 'flex',
+	  justifyContent: 'center',
+	  flexDirection: 'column',
+	  width: '40%',
+	  minWidth: '200px'
+	},
+	mainBody: {
+	  margin: '0 auto',
+	  // border: '2px solid black',
+	  display: 'flex',
+	  justifyContent: 'center',
+	  flexDirection: 'column',
+	  alignItems: 'center',
+	  backgroundColor: 'rgba(0, 0, 100, 0.563)',
+	  paddingTop: '2rem',
+	  paddingBottom: '3rem',
+	  maxWidth: '40%',
+	  minWidth: '250px',
+	  borderRadius: '3px'
+	  
+	},
+	formInput: {
+	  marginTop: '1rem',
+	  borderStyle: 'none',
+	  height: '2rem'
+	},
+  
+	buttonSubmit: {
+	  marginTop: '1rem',
+	  borderStyle: 'none',
+	  height: '2rem',
+	  backgroundColor: 'lightblue',
+	  color: 'black',
+	  fontSize: '1.5rem',
+	  fontFamily: 'sans-serif',
+	  maxWidth: '30%',
+	  minWidth: '100px'
+	},
+  
+	reroute: {
+	  display: 'flex',
+	  fontFamily: 'sans-serif',
+	  fontSize: '12px',
+	  justifyContent: 'center',
+	  marginTop: '2rem',
+	  color: 'whitesmoke',
+	  
+	},
+  
+	linkSpan: {
+	  textDecoration: 'none',
+	  color: 'red'
+	}
+  }
 
 export const Register = () => {
 	const [formState, setFormState] = useState({
@@ -43,8 +101,8 @@ export const Register = () => {
 	return (
 		<main className="flex-row justify-center mb-4">
 			<div className="col-12 col-lg-10">
-				<div className="card">
-					<h4 className="card-header bg-dark text-light p-2">
+				<div style={styles.mainBody}>
+					<h4 className="galleryTitle">
 						Sign Up
 					</h4>
 					<div className="card-body">
@@ -56,9 +114,9 @@ export const Register = () => {
 								</Link>
 							</p>
 						) : (
-							<form onSubmit={handleFormSubmit}>
+							<form style={styles.formBody} onSubmit={handleFormSubmit}>
 								<input
-									className="form-input"
+									style={styles.formInput}
 									placeholder="Your username"
 									name="username"
 									type="text"
@@ -66,7 +124,7 @@ export const Register = () => {
 									onChange={handleChange}
 								/>
 								<input
-									className="form-input"
+									style={styles.formInput}
 									placeholder="Your email"
 									name="email"
 									type="email"
@@ -74,7 +132,7 @@ export const Register = () => {
 									onChange={handleChange}
 								/>
 								<input
-									className="form-input"
+									style={styles.formInput}
 									placeholder="******"
 									name="password"
 									type="password"
@@ -82,12 +140,15 @@ export const Register = () => {
 									onChange={handleChange}
 								/>
 								<button
-									className="btn btn-block btn-primary"
-									style={{ cursor: "pointer" }}
+									id="signupSubmitButton"
+									style={styles.buttonSubmit}
 									type="submit"
 								>
-									Submit
+									submit
 								</button>
+								<div style={styles.reroute}>
+                  <p>Already registered? Go <Link to="/login" style={styles.linkSpan}>here</Link></p>
+                </div>
 							</form>
 						)}
 
@@ -103,36 +164,3 @@ export const Register = () => {
 	);
 };
 
-// import { useState } from 'react';
-
-// export const Register = (props) => {
-//     const [username, setUsername] = useState('');
-//     const [password, setPassword] = useState('');
-//     const [email, setEmail] = useState('');
-//     const onFormSwitch = (form) => {
-//         window.location.href='/login'
-//     };
-//     const handleSubmit = (e) => {
-//         e.preventDefault();
-//         console.log(email);
-//     }
-
-//     return (
-//         <>
-//             <form onSubmit={handleSubmit}>
-//                 <label htmlFor="username">username</label>
-//                 <input value={username} type="text" id="username" placeholder="username" onChange={(e) => setUsername(e.target.value)} />
-//                 <div>
-//                     <label htmlFor="email">Email:</label>
-//                     <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" id="email" placeholder="user@email.com" name="email" />
-//                 </div>
-//                 <div>
-//                     <label htmlFor="password">Password:</label>
-//                     <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" id="password" placeholder="*********" name="password" />
-//                 </div>
-//                 <button type="submit">Register</button>
-//             </form>
-//             <button onClick={() => onFormSwitch('login')}>Go back to login</button>
-//         </>
-//     )
-// }
