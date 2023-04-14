@@ -6,6 +6,7 @@ import {
 import "../styles/pages/homepage.css";
 import james from "../../images/avatars/james.JPG";
 import tracy from "../../images/avatars/tracy.png";
+import riley from "../../images/avatars/rileyrobot.png";
 
 
 const SemiTransparentBox = styled.div`
@@ -57,14 +58,19 @@ const styles = {
 		textAlign: 'justify',
 		borderRadius: '3px'
 		// boxShadow: '3px 3px 5px black .5'
-	}
+	},
+
+	// backImg: {
+	// 	backgroundImage: ''
+	// }
 
 
 };
 
 export const About = () => {
 	return (
-		<>
+		<>	
+			<div>
 			<div className="container"></div>
 			<HomepageSection>
 				<HomepageHeading>
@@ -88,7 +94,10 @@ export const About = () => {
 
 						<Container />
 						<Container />
-						<Container />
+						<Container>
+						<a href="https://github.com/rmob" target="_blank" rel="noreferrer" >
+							<img src={riley} alt="rileyAvatar" title="Riley OBryan" style={{ width: "100%", height: "100%" }} /></a>
+						</Container>
 						<Container>
 							<a href="https://github.com/TMortara" target="_blank" rel="noreferrer" >
 							<img src={tracy} alt="tracyAvatar" title="Tracy Mortara" style={{ width: "100%", height: "100%" }} /></a>
@@ -96,6 +105,7 @@ export const About = () => {
 					</div>
 				</SemiTransparentBox>
 			</HomepageSection>
+			</div>
 		</>
 	);
 };
