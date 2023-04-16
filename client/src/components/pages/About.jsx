@@ -12,7 +12,7 @@ import riley from "../../images/avatars/rileyrobot.png";
 
 
 const SemiTransparentBox = styled.div`
-	margin: 0 3rem;
+	margin: 0 auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -22,6 +22,7 @@ const SemiTransparentBox = styled.div`
 	padding: 30px;
 	border-radius: 30px;
 	min-width: 275px;
+	max-width: 70%;
 	// box-shadow: 3px 3px 5px black
 `;
 const Container = styled.div`
@@ -39,8 +40,8 @@ const Container = styled.div`
 `;
 
 const styles = {
-	colorRed: {
-		color: 'black'
+	header1: {
+		color: 'white'
 	},
 
 	imgRow: {
@@ -62,7 +63,15 @@ const styles = {
 		borderRadius: '3px',
 		// boxShadow: '3px 3px 5px black .5'
 
-}};
+	},
+
+	firstNames: {
+		fontFamily: 'Orbitron, sans-serif',
+		color: 'whitesmoke',
+		marginTop: '.5rem',
+		
+	}
+};
 
 export const About = () => {
 	return (
@@ -74,7 +83,7 @@ export const About = () => {
 					Robotic Ren<span>AI</span>ssance
 				</HomepageHeading>
 				<SemiTransparentBox>
-					<h1 style={styles.colorRed}>About Us</h1>
+					<h1 style={styles.header1}>About Us</h1>
 					<p style={styles.textField}>
 			
 					The staff robots at Robotic Rennaissance are equipped with advanced AI technology that allows them to
@@ -87,20 +96,26 @@ export const About = () => {
 
 						<Container><a href="https://jk377y.dev" target="_blank" rel="noreferrer" >
 								<img src={james} alt="jamesAvatar" title="James Kelly" style={{ width: "100%", height: "100%" }} /></a>
+								<p style={styles.firstNames}>James</p>
 						</Container>
 
-						<Container />
+						<Container>
+							<p style={styles.firstNames}>Fabien</p>
+						</Container>
 						<Container>
 						<a href="https://github.com/rmob" target="_blank" rel="noreferrer" >
 							<img src={riley} alt="rileyAvatar" title="Riley OBryan" style={{ width: "100%", height: "100%" }} /></a>
+							<p style={styles.firstNames}>Riley</p>
 						</Container>
 						<Container>
 							<a href="https://github.com/sofiasosa92" target="_blank" rel="noreferrer" >
 							<img src={sofia} alt="sofiaAvatar" title="Sofia Sosa " style={{ width: "100%", height: "100%" }} /></a>
+							<p style={styles.firstNames}>Sofia</p>
 						</Container>
 						<Container>
 							<a href="https://github.com/TMortara" target="_blank" rel="noreferrer" >
 							<img src={tracy} alt="tracyAvatar" title="Tracy Mortara" style={{ width: "100%", height: "100%" }} /></a>
+							<p style={styles.firstNames}>Tracy</p>
 						</Container>
 					</div>
 				</SemiTransparentBox>
