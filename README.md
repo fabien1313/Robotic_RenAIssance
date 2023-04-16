@@ -20,7 +20,7 @@ deployed link
 # Robotic RenAIssance
 
 ## Description
-
+For our project 3, our team created an aplication called Robotic RenAIssance that incorporates React for the front-end, GraphQL with a Node.js and Express.js server, and MongoDB with the Mongoose ODM for the database. The project utilizes queries and mutations for retrieving, adding, updating, and deleting data, and includes user authentication with JWT to build a user-focused platform. The application is deployed using Heroku with data and features a polished, responsive, and interactive UI. The repository meets quality coding standards with proper file structure and naming conventions.
 
 ## Deployed Application
 https://robotic-renaissance.herokuapp.com/
@@ -38,7 +38,14 @@ https://robotic-renaissance.herokuapp.com/
 ## Installation Steps
 Before accessing the application locally, you must [install Node.js](https://nodejs.org/en/).
 
-After installing Node.js, open the integrated terminal in VS Code and run `npm install`.  This will install all of the dependencies listed in the package.json file.  You may need to run an `npm install` on the client and server side to ensure you install the correct packages. 
+After installing Node.js, open the integrated terminal in VS Code 
+
+Run `npm install`
+
+This will install all of the dependencies listed in the package.json file.  
+
+You may need to run an `npm install` on the client and server side to ensure you install the correct packages. 
+
 
 <u>Installation Resources</u>:
 - [Install Apollo Client](https://www.apollographql.com/docs/react/get-started)
@@ -49,7 +56,7 @@ After installing Node.js, open the integrated terminal in VS Code and run `npm i
 - [Install Styled Components](https://styled-components.com/docs/basics#installation)
 - [Install Jest](https://jestjs.io/docs/getting-started)
 
-## Development Usage
+## Usage
 
 The application can be run locally or through the deployed link.  If you run the application locally, you will need to run steps 1-7 before accessing the application.
 
